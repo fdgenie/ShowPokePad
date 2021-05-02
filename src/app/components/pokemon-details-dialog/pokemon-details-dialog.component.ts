@@ -11,7 +11,6 @@ import { upperCaseFirstLetter } from '@app/Utilities/Index';
 export class PokemonDetailsDialogComponent implements OnInit {
   image: string = '';
   name: string = '';
-  upperCaseFirstLetter = () => upperCaseFirstLetter;
 
   constructor(@Inject(MAT_DIALOG_DATA) public pokemon: PokemonModel) {}
 
@@ -23,5 +22,4 @@ export class PokemonDetailsDialogComponent implements OnInit {
   upperCaseMoves(name: string) {
     return upperCaseFirstLetter(name);
   }
-
 }

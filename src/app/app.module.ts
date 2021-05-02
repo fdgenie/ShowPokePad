@@ -26,6 +26,7 @@ import { PokemonDetailsDialogComponent } from './components/pokemon-details-dial
 import { WishlistPageComponent } from './components/page/wishlist-page/wishlist-page.component';
 import { MainPageComponent } from './components/page/main-page/main-page.component';
 import { OwnedPokemonPageComponent } from './components/page/owned-pokemon-page/owned-pokemon-page.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { OwnedPokemonPageComponent } from './components/page/owned-pokemon-page/
     MatDialogModule,
     MatListModule,
     MatSnackBarModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

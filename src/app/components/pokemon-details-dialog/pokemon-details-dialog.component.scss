@@ -5,15 +5,18 @@
   flex-wrap: wrap;
 }
 
+.extra-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .img-size {
   width: 90%;
 }
 
 .moves-info {
-  @media only screen and (max-width: 996px) {
-    columns: 2;
-  }
-  columns: 3;
+  columns: 2;
   background-color: rgb(226, 226, 226);
 }
 

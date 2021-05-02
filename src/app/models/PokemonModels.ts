@@ -29,6 +29,13 @@ export interface PokemonModel {
       };
     }
   ];
+  abilities: [
+    {
+      ability: {
+        name: string;
+      };
+    }
+  ];
 }
 
 export interface PokemonStatsModel {

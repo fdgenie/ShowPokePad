@@ -40,13 +40,23 @@
       </p>
     </div>
   </div>
-  <div>
-    <h1>Moves</h1>
-    <ul class="moves-info">
-      <li class="item" *ngFor="let move of pokemon.moves">
-        {{ upperCaseMoves(move.move.name) }}
-      </li>
-    </ul>
+  <div class="extra-info">
+    <div>
+      <h1>Moves</h1>
+      <ul class="moves-info">
+        <li class="item" *ngFor="let move of pokemon.moves">
+          {{ upperCaseMoves(move.move.name) }}
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h1>Abilities</h1>
+      <ul class="moves-info">
+        <li class="item" *ngFor="let ability of pokemon.abilities">
+          {{ upperCaseMoves(ability.ability.name) }}
+        </li>
+      </ul>
+    </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
