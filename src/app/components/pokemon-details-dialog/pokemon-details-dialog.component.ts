@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PokemonModel } from '@app/models/PokemonModels';
 import { upperCaseFirstLetter } from '@app/Utilities/Index';
 
 @Component({
@@ -12,7 +13,7 @@ export class PokemonDetailsDialogComponent implements OnInit {
   name: string = '';
   upperCaseFirstLetter = () => upperCaseFirstLetter;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public pokemon: any) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public pokemon: PokemonModel) {}
 
   ngOnInit(): void {
     this.image = this.pokemon.sprites.other['official-artwork'].front_default;

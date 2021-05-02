@@ -8,10 +8,10 @@
     </h2>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button class="pokeball-color">
+    <button mat-icon-button class="pokeball-color" (click)="savePokemon(name + ' is caught')">
       <mat-icon>catching_pokemon</mat-icon>
     </button>
-    <button mat-icon-button class="star-color">
+    <button mat-icon-button class="star-color" (click)="savePokemon(name + ' is added to wishlist')">
       <mat-icon>star</mat-icon>
     </button>
   </mat-card-actions>

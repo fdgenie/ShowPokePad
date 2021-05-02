@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PokemonModel } from '@app/models/PokemonModels';
 import { PokemonService } from '@app/services/pokemon.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,6 +12,8 @@ import { upperCaseFirstLetter } from '@app/Utilities/Index';
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemonUrl: string = '';
+  @Output() savePokemonNotifyEmit: EventEmitter<string> = new EventEmitter();
+
   pokemon: PokemonModel;
   image: string = '';
   name: string = '';
@@ -23,13 +25,12 @@ export class PokemonCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.PokemonService.getPokemon(this.pokemonUrl).subscribe(
-      (response: any) => {
+      (response: PokemonModel) => {
         this.pokemon = response;
         this.image = this.pokemon.sprites.other[
           'official-artwork'
         ].front_default;
         this.name = upperCaseFirstLetter(this.pokemon.name);
-        // console.log(this.pokemon);
       }
     );
   }
@@ -39,5 +40,9 @@ export class PokemonCardComponent implements OnInit {
       data: this.pokemon,
       disableClose: true,
     });
+  }
+
+  savePokemon(msg: string) {
+    this.savePokemonNotifyEmit.emit(msg);
   }
 }

@@ -4,6 +4,7 @@ import {
   PokemonPaginationResultsModel,
 } from '@app/models/PokemonModels';
 import { PokemonService } from '@app/services/pokemon.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-main-body',
@@ -19,7 +20,10 @@ export class MainBodyComponent implements OnInit {
   searchedPokemons: PokemonPaginationResultsModel[] = [];
   searchValue: string = '';
 
-  constructor(private PokemonService: PokemonService) {}
+  constructor(
+    private PokemonService: PokemonService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.getPokemons();
@@ -57,5 +61,11 @@ export class MainBodyComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  showSavePokemonNotify(msg: string) {
+    this.snackBar.open(msg, 'Close', {
+      duration: 3000,
+    });
   }
 }

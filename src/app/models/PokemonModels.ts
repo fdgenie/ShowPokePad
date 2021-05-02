@@ -13,17 +13,22 @@ export interface PokemonPaginationResultsModel {
 export interface PokemonModel {
   id: number;
   name: string;
-  height: number;
-  weight: number;
   base_experience: number;
   stats: PokemonStatsModel[];
   sprites: {
     other: {
-      "official-artwork": {
-        front_default: string
-      }
+      'official-artwork': {
+        front_default: string;
+      };
+    };
+  };
+  moves: [
+    {
+      move: {
+        name: string;
+      };
     }
-  }
+  ];
 }
 
 export interface PokemonStatsModel {
@@ -34,4 +39,3 @@ export interface PokemonStatsModel {
     url: string;
   };
 }
-
