@@ -1,9 +1,15 @@
 <mat-toolbar color="primary">
   <button mat-button [routerLink]="['/']" class="example-icon">
-    <h4>Pokedex App</h4>
+    <span class="mat-headline">Pokedex App</span>
   </button>
   <span class="spacer"></span>
-  <button mat-button [routerLink]="['/']">Home</button>
-  <button mat-button [routerLink]="['/gotem']">Got em</button>
-  <button mat-button [routerLink]="['/wishlist']">Wishlist</button>
+  <button mat-button [routerLink]="['/']">
+    <span class="mat-subheading-2">Home</span>
+  </button>
+  <button mat-button [routerLink]="['/gotem']">
+    <span class="mat-subheading-2">Got em</span>
+  </button>
+  <button mat-button [routerLink]="['/wishlist']">
+    <span class="mat-subheading-2">Wishlist</span>
+  </button>
 </mat-toolbar>

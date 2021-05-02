@@ -15,7 +15,6 @@ export class PokemonDetailsDialogComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public pokemon: any) {}
 
   ngOnInit(): void {
-    console.log(this.pokemon);
     this.image = this.pokemon.sprites.other['official-artwork'].front_default;
     this.name = upperCaseFirstLetter(this.pokemon.name);
   }
