@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- Search Form -->
+  <mat-form-field class="form-field">
+    <input
+      matInput
+      type="search"
+      [(ngModel)]="searchValue"
+      (ngModelChange)="search()"
+      placeholder="Search...."
+    />
+    <button
+      *ngIf="searchValue !== ''"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clearSearch()"
+    >
+      <mat-icon style="font-size: 20px">clear</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="card-container loading" *ngIf="loading; else showCards">
+    <!-- Loading  -->
+    Loading...
+  </div>
+
+  <!-- Pokemon Card -->
+  <ng-template #showCards>
+    <div class="card-container">
+      <div class="item" *ngFor="let pokemon of searchedPokemons; index as i">
+        <app-pokemon-card [pokemonUrl]="pokemon.url"></app-pokemon-card>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Paginator  -->
+  <div>
+    <mat-paginator
+      [length]="length"
+      [pageSize]="limit"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="pageEvent($event)"
+      [showFirstLastButtons]="true"
+    >
+    </mat-paginator>
+  </div>
+</div>

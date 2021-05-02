@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+.star-color:hover {
+  color: rgb(219, 199, 17);
+}
+
+.pokeball-color:hover {
+  color: red;
+}
+
+img {
+  width: 50%;
+}

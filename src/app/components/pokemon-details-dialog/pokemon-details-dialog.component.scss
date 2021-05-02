@@ -1,0 +1,28 @@
+.basic-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.img-size {
+  width: 90%;
+}
+
+
+.moves-info {
+  columns: 3;
+  background-color: gray;
+}
+
+.item {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.stats-font {
+  font-weight: bold;
+}
+
+.moves-title {
+  align-items: center;
+}
