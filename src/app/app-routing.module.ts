@@ -5,7 +5,8 @@ import { WishlistPageComponent } from '@app/components/page/wishlist-page/wishli
 import { OwnedPokemonPageComponent } from '@app/components/page/owned-pokemon-page/owned-pokemon-page.component';
 
 const routes: Routes = [
-  { path: '/', component: MainPageComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: MainPageComponent },
   { path: 'wishlist', component: WishlistPageComponent },
   { path: 'gotem', component: OwnedPokemonPageComponent },
 ];
