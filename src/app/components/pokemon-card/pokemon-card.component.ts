@@ -49,8 +49,8 @@ export class PokemonCardComponent implements OnInit {
   }
 
   //Save pokemon and notify user
-  savePokemon(msg: string, savePlace: string) {
-    if (savePlace === 'wishlist') {
+  savePokemon(msg: string, saveTo: string) {
+    if (saveTo === 'wishlist') {
       this.saveToWishList();
     } else {
       this.saveToOwned();
@@ -80,7 +80,27 @@ export class PokemonCardComponent implements OnInit {
   }
 
   //Remove pokemon from list
-  removePokemon(msg: string) {
+  removePokemon(msg: string, removeFrom: string) {
+    if (removeFrom === 'wishlist') {
+      this.removeFromWishList();
+    } else {
+      this.removeFromOwned();
+    }
+
     this.savePokemonNotifyEmit.emit(msg);
+  }
+
+  removeFromWishList() {
+    wishlistPokemon.results = wishlistPokemon.results.filter(
+      (p) => p.name !== this.name
+    );
+    wishlistPokemon.count = wishlistPokemon.results.length;
+  }
+
+  removeFromOwned() {
+    ownedPokemon.results = ownedPokemon.results.filter(
+      (p) => p.name !== this.name
+    );
+    ownedPokemon.count = ownedPokemon.results.length;
   }
 }

@@ -13,6 +13,7 @@ import {
 } from '@app/models/PokemonModels';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ownedPokemon, wishlistPokemon } from '@app/db.json';
 
 @Component({
   selector: 'app-main-body',
