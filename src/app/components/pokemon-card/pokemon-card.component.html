@@ -7,11 +7,11 @@
       {{ name }}
     </h2>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-icon-button class="pokeball-color" (click)="savePokemon(name + ' is caught')">
+  <mat-card-actions *ngIf="url == '/'">
+    <button mat-icon-button class="pokeball-color" (click)="savePokemon(name + ' is caught', 'owned')">
       <mat-icon>catching_pokemon</mat-icon>
     </button>
-    <button mat-icon-button class="star-color" (click)="savePokemon(name + ' is added to wishlist')">
+    <button mat-icon-button class="star-color" (click)="savePokemon(name + ' is added to wishlist', 'wishlist')">
       <mat-icon>star</mat-icon>
     </button>
   </mat-card-actions>

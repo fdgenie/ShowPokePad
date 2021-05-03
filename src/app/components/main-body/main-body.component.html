@@ -20,25 +20,21 @@
     </button>
   </mat-form-field>
 
-  <div class="card-container loading" *ngIf="loading; else showCards">
-    <!-- Loading  -->
-    Loading...
+  <!-- Pokemon Card -->
+  <div class="card-container">
+    <div class="item" *ngFor="let pokemon of searchedPokemons; index as i">
+      <app-pokemon-card
+        [pokemonUrl]="pokemon.url"
+        (savePokemonNotifyEmit)="showSavePokemonNotify($event)"
+      ></app-pokemon-card>
+    </div>
   </div>
 
-  <!-- Pokemon Card -->
-  <ng-template #showCards>
-    <div class="card-container">
-      <div class="item" *ngFor="let pokemon of searchedPokemons; index as i">
-        <app-pokemon-card [pokemonUrl]="pokemon.url" (savePokemonNotifyEmit)="showSavePokemonNotify($event)"></app-pokemon-card>
-      </div>
-    </div>
-  </ng-template>
-
   <!-- Paginator  -->
-  <div>
+  <div *ngIf="url === '/'">
     <mat-paginator
-      [length]="length"
-      [pageSize]="limit"
+      [length]="pokemonsListPage.count"
+      [pageSize]="paginationParams.limit"
       [pageSizeOptions]="[5, 10, 25, 100]"
       (page)="pageEvent($event)"
       [showFirstLastButtons]="true"

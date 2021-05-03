@@ -3,11 +3,17 @@ export interface PokemonPaginationModel {
   next: string;
   previous: string;
   results: PokemonPaginationResultsModel[];
+  paginationParams: PaginationParams;
 }
 
 export interface PokemonPaginationResultsModel {
   name: string;
   url: string;
+}
+
+export interface PaginationParams {
+  limit: number;
+  offset: number;
 }
 
 export interface PokemonModel {

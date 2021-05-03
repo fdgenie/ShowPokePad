@@ -1,1 +1,4 @@
-<app-main-body></app-main-body>
+<app-main-body
+  *ngIf="pokemonsOwnedListPage"
+  [pokemonsListPage]="pokemonsOwnedListPage"
+></app-main-body>

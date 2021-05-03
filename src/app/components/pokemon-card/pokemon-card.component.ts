@@ -4,6 +4,8 @@ import { PokemonService } from '@app/services/pokemon.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonDetailsDialogComponent } from '@app/components/pokemon-details-dialog/pokemon-details-dialog.component';
 import { upperCaseFirstLetter } from '@app/Utilities/Index';
+import { ownedPokemon, wishlistPokemon } from '@app/db.json';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -17,13 +19,16 @@ export class PokemonCardComponent implements OnInit {
   pokemon: PokemonModel;
   image: string = '';
   name: string = '';
+  url: string = '';
 
   constructor(
     private PokemonService: PokemonService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.url = this.router.url;
     this.PokemonService.getPokemon(this.pokemonUrl).subscribe(
       (response: PokemonModel) => {
         this.pokemon = response;
@@ -35,6 +40,7 @@ export class PokemonCardComponent implements OnInit {
     );
   }
 
+  //Open dialog with details about pokemon
   openDialog() {
     this.dialog.open(PokemonDetailsDialogComponent, {
       data: this.pokemon,
@@ -42,7 +48,34 @@ export class PokemonCardComponent implements OnInit {
     });
   }
 
-  savePokemon(msg: string) {
+  //Save pokemon and notify user
+  savePokemon(msg: string, savePlace: string) {
+    if (savePlace === 'wishlist') {
+      this.saveToWishList();
+    } else {
+      this.saveToOwned();
+    }
+
     this.savePokemonNotifyEmit.emit(msg);
+  }
+
+  //Save pokemon to Got em list
+  saveToOwned() {
+    if (ownedPokemon.results.some((p) => p.name === this.name)) return;
+    ownedPokemon.results.push({
+      name: this.name,
+      url: this.pokemonUrl,
+    });
+    ownedPokemon.count = ownedPokemon.results.length;
+  }
+
+  //Save pokemon to wishlist
+  saveToWishList() {
+    if (wishlistPokemon.results.some((p) => p.name === this.name)) return;
+    wishlistPokemon.results.push({
+      name: this.name,
+      url: this.pokemonUrl,
+    });
+    wishlistPokemon.count = wishlistPokemon.results.length;
   }
 }

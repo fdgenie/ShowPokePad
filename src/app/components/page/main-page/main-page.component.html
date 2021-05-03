@@ -1,1 +1,5 @@
-<app-main-body></app-main-body>
+<app-main-body
+  *ngIf="pokemonsListPage"
+  [pokemonsListPage]="pokemonsListPage"
+  (paginatePokemonsEmit)="paginatePokemons($event)"
+></app-main-body>
