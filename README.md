@@ -29,6 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1)den tou dinw epilogi na svisei
 2) kalutero ui
-3) prepei na kanw destroy to subscribe otan allazei page
 4)test
 5) na grapsw to read me kai na pw oti kanw polles klhseis

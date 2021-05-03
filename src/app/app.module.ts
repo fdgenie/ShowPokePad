@@ -12,7 +12,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +52,6 @@ import { OwnedPokemonPageComponent } from './components/page/owned-pokemon-page/
     MatPaginatorModule,
     FormsModule,
     MatDialogModule,
-    MatListModule,
     MatSnackBarModule,
   ],
   providers: [],

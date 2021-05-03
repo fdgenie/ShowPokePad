@@ -78,4 +78,9 @@ export class PokemonCardComponent implements OnInit {
     });
     wishlistPokemon.count = wishlistPokemon.results.length;
   }
+
+  //Remove pokemon from list
+  removePokemon(msg: string) {
+    this.savePokemonNotifyEmit.emit(msg);
+  }
 }

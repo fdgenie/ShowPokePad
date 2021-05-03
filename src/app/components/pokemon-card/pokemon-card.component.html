@@ -7,7 +7,7 @@
       {{ name }}
     </h2>
   </mat-card-content>
-  <mat-card-actions *ngIf="url == '/'">
+  <mat-card-actions *ngIf="url == '/'; else deleteFromList">
     <button mat-icon-button class="pokeball-color" (click)="savePokemon(name + ' is caught', 'owned')">
       <mat-icon>catching_pokemon</mat-icon>
     </button>
@@ -15,4 +15,12 @@
       <mat-icon>star</mat-icon>
     </button>
   </mat-card-actions>
+
+  <ng-template #deleteFromList>
+    <mat-card-actions>
+      <button mat-icon-button class="pokeball-color" (click)="removePokemon(name + ' is removed from list', 'owned')">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-card-actions>
+  </ng-template>
 </mat-card>
