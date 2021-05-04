@@ -1,4 +1,4 @@
-# showPokePad
+# ShowPokePad
 
 ShowPokePad is a basic application that help you organize your pokedex. You can navigate through pokemon, see details about them and either get'em or add them to your wishlist.
 
