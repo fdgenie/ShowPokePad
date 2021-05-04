@@ -15,6 +15,7 @@ PokeAPI provides a RESTful API with higly detailed objects built from thousands 
 
 
 //images
+![alt text](https://github.com/fdgenie/Pokedex/blob/master/src/assets/images/mobile_main_page.png)
 
 ## Development server
 
