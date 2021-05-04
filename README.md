@@ -14,8 +14,10 @@ Application is using PokeAPI for data.
 PokeAPI provides a RESTful API with higly detailed objects built from thousands of lines of data related to Pokémon.
 
 
-//images
-![alt text](https://github.com/fdgenie/Pokedex/blob/master/src/assets/images/mobile_main_page.png)
+# Images
+![mobile_version_main_page](https://github.com/fdgenie/Pokedex/blob/master/src/assets/images/mobile_main_page.png)
+![main_page](https://github.com/fdgenie/Pokedex/blob/master/src/assets/images/main_page.png)
+![gotem_page](https://github.com/fdgenie/Pokedex/blob/master/src/assets/images/gotem_page.png)
 
 ## Development server
 
