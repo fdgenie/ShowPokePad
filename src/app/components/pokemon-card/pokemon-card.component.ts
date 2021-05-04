@@ -36,6 +36,9 @@ export class PokemonCardComponent implements OnInit {
           'official-artwork'
         ].front_default;
         this.name = upperCaseFirstLetter(this.pokemon.name);
+      },
+      (err) => {
+        throw err;
       }
     );
   }

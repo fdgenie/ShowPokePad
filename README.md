@@ -1,5 +1,16 @@
 # PokemonApp
 
+ShowPokepad is a basic application that you help you organize you personal list with Pokemon's and your wishlist. The data are coming from pokeApi a very nice api with details about pokemons.
+You sent Today at 13:37
+Technologies used are angular framework, with material angular for the css and rjxs
+You sent Today at 13:37
+Pokedex using the PokeAPI for constructing RESTful API.
+PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
+You sent Today at 13:37
+//images
+You sent Today at 13:37
+// πως να τρεξει buld κτλ
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server

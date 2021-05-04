@@ -35,10 +35,15 @@ export class MainPageComponent implements OnInit, OnDestroy {
     this.subscription = this.PokemonService.getPokemons(
       limit,
       offset
-    ).subscribe((response: PokemonPaginationModel) => {
-      this.pokemonsListPage = response;
-      this.pokemonsListPage.paginationParams = { limit, offset };
-    });
+    ).subscribe(
+      (response: PokemonPaginationModel) => {
+        this.pokemonsListPage = response;
+        this.pokemonsListPage.paginationParams = { limit, offset };
+      },
+      (err) => {
+        throw err;
+      }
+    );
   }
 
   paginatePokemons(ev: PaginationParams) {

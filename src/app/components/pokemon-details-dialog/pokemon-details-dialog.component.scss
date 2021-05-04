@@ -17,6 +17,9 @@
 
 .moves-info {
   columns: 2;
+  @media only screen and (min-width: 996px) {
+    columns: 3;
+  }
   background-color: rgb(226, 226, 226);
 }
 
