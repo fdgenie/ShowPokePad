@@ -1,4 +1,11 @@
 <app-main-body
-  *ngIf="pokemonsOwnedListPage"
+  *ngIf="pokemonsOwnedListPage.results.length > 0; else placeholderForZeroList"
   [pokemonsListPage]="pokemonsOwnedListPage"
 ></app-main-body>
+
+<ng-template #placeholderForZeroList>
+  <div class="placeholder-empty-page">
+    <h1>You haven't catched any Pokemon yet.</h1>
+    <h2>Go get'em</h2>
+  </div>
+</ng-template>

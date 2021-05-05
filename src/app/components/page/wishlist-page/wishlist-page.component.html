@@ -1,4 +1,11 @@
 <app-main-body
-  *ngIf="pokemonsWishListListPage"
+  *ngIf="pokemonsWishListListPage.results.length > 0; else placeholderForZeroList"
   [pokemonsListPage]="pokemonsWishListListPage"
 ></app-main-body>
+
+<ng-template #placeholderForZeroList>
+  <div class="placeholder-empty-page">
+    <h1>You don't have any Pokemon on you wishlist yet.</h1>
+    <h2>Go wish'em</h2>
+  </div>
+</ng-template>
