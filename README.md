@@ -8,10 +8,10 @@ This application is just for learning purposes and it focuses on fundamentals of
 It's also using material Angular for css and basic functionality of RxJs.
 Unit tests with Jasmine + Karma are included.
 
-# Api for data
+# Api
 
 Application is using PokeAPI for data.
-PokeAPI provides a RESTful API with higly detailed objects built from thousands of lines of data related to Pokémon.
+PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 
 # Images
